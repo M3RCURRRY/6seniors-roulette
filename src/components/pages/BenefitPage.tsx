@@ -3,6 +3,7 @@ import { IValues } from "../../types/types";
 import { benefits } from "../../utils/benefits";
 import ActionCard from "../layout/ActionCard/ActionCard";
 import Configurator from "../layout/Configurator/Configurator";
+import Roulette from "../layout/Roulette/Roulette";
 
 type BenefitState = {
   benefits: IValues[]
@@ -14,13 +15,14 @@ class BenefitPage extends React.Component<{}, BenefitState> {
     benefits: benefits
   }
 
-  addAction = (tag: string, ru_description: string, en_description: string) => {
+  addAction = (tag: string, ru_description: string, en_description: string, color: string) => {
     const nextId: number = this.state.benefits.length;
     const newAction: IValues = {
       id: nextId,
       tag: tag,
       ru_description: ru_description,
-      en_description: en_description
+      en_description: en_description,
+      color: color
     }
 
     this.setState((prev) => ({
@@ -39,6 +41,7 @@ class BenefitPage extends React.Component<{}, BenefitState> {
   render(): React.ReactNode {
       return (
         <div>
+          <Roulette values={this.state.benefits}/>
           {
             this.state.benefits.map(item => {
               return <ActionCard key={item.tag + item.id} data={item} onRemove={this.removeAction}/>

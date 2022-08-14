@@ -3,4 +3,5 @@ export interface IValues {
   tag: string,
   ru_description: string,
   en_description: string,
+  color: string
 }

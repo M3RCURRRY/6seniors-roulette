@@ -15,7 +15,7 @@ class ActionCard extends React.Component<ActionCardProps> {
 
   render(): React.ReactNode {
     return (
-      <div className={styles.card}>
+      <div className={styles.card} style={{background: this.props.data.color}}>
         <h3>{this.props.data.tag}</h3>
         <p>{this.props.data.ru_description}</p>
         <p>{this.props.data.en_description}</p>

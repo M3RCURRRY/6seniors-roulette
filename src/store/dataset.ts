@@ -10,7 +10,7 @@ export default class Dataset {
   constructor() {
     makeAutoObservable(this);
     this.benefits = benefits;
-    this.punishments = punishments
+    this.punishments = punishments;
   }
 
   getPunishments() {
