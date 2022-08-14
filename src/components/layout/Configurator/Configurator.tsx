@@ -44,7 +44,6 @@ class Configurator extends React.Component<ConfiguratorProps, ConfiguratorState>
         })
         break;
       case "color":
-        console.log(value);
         this.setState({
           color: value
         })
