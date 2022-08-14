@@ -1,14 +1,27 @@
 import React from "react";
+import { IValues } from "../../../types/types";
 
-class ActionCard extends React.Component {
+import styles from "./ActionCard.module.css";
+
+type ActionCardProps = {
+  data: IValues;
+  onRemove: (tag: string) => void
+}
+
+class ActionCard extends React.Component<ActionCardProps> {
+  removeHandler() {
+    this.props.onRemove(this.props.data.tag);
+  }
+
   render(): React.ReactNode {
-    return(
-      <div>
-        <h1>
-
-        </h1>
+    return (
+      <div className={styles.card}>
+        <h3>{this.props.data.tag}</h3>
+        <p>{this.props.data.ru_description}</p>
+        <p>{this.props.data.en_description}</p>
+        <button onClick={() => this.removeHandler()}>Remove action</button>
       </div>
-    )      
+    );
   }
 }
 

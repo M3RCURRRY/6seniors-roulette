@@ -1,6 +1,7 @@
 import React from "react";
 import { IValues } from "../../types/types";
 import { benefits } from "../../utils/benefits";
+import ActionCard from "../layout/ActionCard/ActionCard";
 import Configurator from "../layout/Configurator/Configurator";
 
 type BenefitState = {
@@ -27,22 +28,20 @@ class BenefitPage extends React.Component<{}, BenefitState> {
     }));
   }
 
+  removeAction = (tag: string) => {
+    const nextState = this.state.benefits.filter(item => item.tag !== tag);
+
+    this.setState({
+      benefits: nextState
+    });
+  }
+
   render(): React.ReactNode {
       return (
         <div>
           {
             this.state.benefits.map(item => {
-              return (
-                <div key={item.id}>
-                  <b>{item.tag}</b>
-                  <br/>
-                  {item.ru_description}
-                  <br/>
-                  {item.en_description}
-                  <br/>
-                  <br/>
-                </div>
-              )
+              return <ActionCard key={item.tag + item.id} data={item} onRemove={this.removeAction}/>
             })
           }
           <Configurator values={this.state.benefits} onSubmit={this.addAction}/>
@@ -55,18 +54,18 @@ export default BenefitPage;
 
 /*
 {
-this.state.benefits.map(item => {
-  return (
-    <div key={item.id}>
-      <b>{item.tag}</b>
-      <br/>
-      {item.ru_description}
-      <br/>
-      {item.en_description}
-      <br/>
-      <br/>
-    </div>
-  )
-})
+  this.state.benefits.map(item => {
+    return (
+      <div key={item.id}>
+        <b>{item.tag}</b>
+        <br/>
+        {item.ru_description}
+        <br/>
+        {item.en_description}
+        <br/>
+        <br/>
+      </div>
+    )
+  })
 }
 */

@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Wrapper from "./components/layout/Wrapper/Wrapper";
 import { ThemeProvider } from "@mui/material";
 import theme from "./utils/theme";
-import Header from "./components/layout/Header/Header";
 import BenefitPage from "./components/pages/BenefitPage";
 import PunishmentPage from "./components/pages/PunishmentPage";
 
