@@ -9,7 +9,7 @@ type PunishmentState = {
   punishments: IValues[];
 };
 
-class PunishmentPage extends React.Component<{}, PunishmentState> {
+export default class PunishmentPage extends React.Component<{}, PunishmentState> {
   state: PunishmentState = {
     punishments: punishments,
   };
@@ -60,5 +60,3 @@ class PunishmentPage extends React.Component<{}, PunishmentState> {
     );
   }
 }
-
-export default PunishmentPage;

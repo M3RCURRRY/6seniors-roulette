@@ -1,0 +1,13 @@
+.pageLayout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 150px;
+}
+
+.buttonsLayout {
+  display: flex;
+  flex-direction: row;
+}
