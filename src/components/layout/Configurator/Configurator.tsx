@@ -7,10 +7,7 @@ import { observer } from "mobx-react";
 type ConfiguratorProps = {
   values: IValues[];
   onSubmit: (
-    tag: string,
-    ru_description: string,
-    en_description: string,
-    color: string
+    newTask: IValues
   ) => void;
 };
 
@@ -72,7 +69,7 @@ const Configurator = observer(
         en_description: this.state.en_description,
         color: this.state.color
       }
-      dataset.addBenefit(newValue);
+      this.props.onSubmit(newValue);
     }
 
     render(): React.ReactNode {

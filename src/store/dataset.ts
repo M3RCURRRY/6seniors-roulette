@@ -22,26 +22,34 @@ export default new class Dataset {
   }
 
   addPunishment(newPunishment: IValues) {
-    punishments.push(newPunishment);
+    this.punishments.push(newPunishment);
   }
 
   addBenefit(newBenefit: IValues) {
-    benefits.push(newBenefit);
+    this.benefits.push(newBenefit);
   }
 
   removePunishment(id: number) {
-    for(let index in this.punishments) {
-      if (this.punishments[index].id === id) {
-        this.punishments.splice(+index, 1);
+    // Лаконичный и одновременно проблемный код
+    // this.punishments = this.punishments.filter(item => item.id !== id);
+
+    // Рабочее мракобесие
+    for(let item in this.punishments) {
+      if (this.punishments[item].id === id) {
+        this.punishments.splice(+item, 1);
         break;
       }
     }
   }
 
   removeBenefit(id: number) {
-    for(let index in this.benefits) {
-      if (this.benefits[index].id === id) {
-        this.benefits.splice(+index, 1);
+    // Лаконичный и одновременно проблемный код
+    // this.benefits = this.benefits.filter(item => item.id !== id);
+
+    // Рабочее мракобесие
+    for(let item in this.benefits) {
+      if (this.benefits[item].id === id) {
+        this.benefits.splice(+item, 1);
         break;
       }
     }

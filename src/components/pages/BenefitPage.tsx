@@ -1,6 +1,5 @@
 import React from "react";
 import { IValues } from "../../types/types";
-import { benefits } from "../../utils/benefits";
 import ActionCard from "../layout/ActionCard/ActionCard";
 import Configurator from "../layout/Configurator/Configurator";
 import Roulette from "../layout/Roulette/Roulette";
@@ -18,24 +17,8 @@ const BenefitPage = observer(
       benefits: dataset.getBenefits(),
     };
 
-    addAction = (
-      tag: string,
-      ru_description: string,
-      en_description: string,
-      color: string
-    ) => {
-      const nextId: number = this.state.benefits.length;
-      const newAction: IValues = {
-        id: nextId,
-        tag: tag,
-        ru_description: ru_description,
-        en_description: en_description,
-        color: color,
-      };
-
-      this.setState((prev) => ({
-        benefits: [...prev.benefits, newAction],
-      }));
+    addAction = (newTask: IValues) => {
+      dataset.addBenefit(newTask);
     };
 
     removeAction = (id: number) => {

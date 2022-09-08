@@ -1,5 +1,7 @@
+import { Button } from "@mui/material";
 import React from "react";
 import { IValues } from "../../../types/types";
+import styles from "./Roulette.module.css";
 
 type RouletteProps = {
   values: IValues[];
@@ -61,11 +63,12 @@ class Roulette extends React.Component<RouletteProps> {
   }
 
   rotateHandler() {
-    const offset = (360 + Math.floor(Math.random() * 361));
+    const btn = document.getElementById("rollButton") as HTMLButtonElement;
+    const offset = 360 + Math.floor(Math.random() * 361);
     this.spinWheel(offset);
     setTimeout(() => {
       this.degree = 0;
-      this.spinWheel(0)
+      this.spinWheel(0);
     }, 5000);
   }
 
@@ -78,8 +81,16 @@ class Roulette extends React.Component<RouletteProps> {
 
   render(): React.ReactNode {
     return (
-      <div>
-        <button onClick={() => this.rotateHandler()}>Spin wheel</button>
+      <div className={styles.rouletteLayout}>
+        <Button
+          name="rollButton"
+          variant="contained"
+          color="success"
+          onClick={() => this.rotateHandler()}
+          sx={{position: "absolute", zIndex: 99}}
+        >
+          Spin wheel
+        </Button>
         <canvas id="roulette"></canvas>
       </div>
     );
