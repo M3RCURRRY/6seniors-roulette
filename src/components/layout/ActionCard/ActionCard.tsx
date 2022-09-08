@@ -5,12 +5,12 @@ import styles from "./ActionCard.module.css";
 
 type ActionCardProps = {
   data: IValues;
-  onRemove: (tag: string) => void
+  onRemove: (id: number) => void
 }
 
 class ActionCard extends React.Component<ActionCardProps> {
   removeHandler() {
-    this.props.onRemove(this.props.data.tag);
+    this.props.onRemove(this.props.data.id);
   }
 
   render(): React.ReactNode {

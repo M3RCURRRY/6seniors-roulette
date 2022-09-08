@@ -4,6 +4,8 @@ import { punishments } from "../../utils/punishments";
 import ActionCard from "../layout/ActionCard/ActionCard";
 import Configurator from "../layout/Configurator/Configurator";
 import Roulette from "../layout/Roulette/Roulette";
+import styles from "./Page.module.css";
+import dataset from "../../store/dataset";
 
 type PunishmentState = {
   punishments: IValues[];
@@ -11,7 +13,7 @@ type PunishmentState = {
 
 export default class PunishmentPage extends React.Component<{}, PunishmentState> {
   state: PunishmentState = {
-    punishments: punishments,
+    punishments: dataset.getPunishments(),
   };
 
   addAction = (
@@ -34,17 +36,13 @@ export default class PunishmentPage extends React.Component<{}, PunishmentState>
     }));
   };
 
-  removeAction = (tag: string) => {
-    const nextState = this.state.punishments.filter((item) => item.tag !== tag);
-
-    this.setState({
-      punishments: nextState,
-    });
+  removeAction = (id: number) => {
+    dataset.removeBenefit(id);
   };
 
   render(): React.ReactNode {
     return (
-      <div>
+      <div className={styles.mainLayout}>
         <Roulette values={this.state.punishments} />
         {this.state.punishments.map((item) => {
           return (

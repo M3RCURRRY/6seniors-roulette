@@ -13,7 +13,7 @@ export default class IndexPage extends React.Component {
             Choose roulette mode
           </Typography>
           <div className={styles.buttonsLayout}>
-            <Link to="/" style={{ textDecoration: "none", margin: "5px" }}>
+            <Link to="benefits" style={{ textDecoration: "none", margin: "5px" }}>
               <Button variant="contained" color={"success"}>
                 Benefits Page
               </Button>
