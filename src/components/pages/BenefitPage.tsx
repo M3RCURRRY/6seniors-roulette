@@ -3,8 +3,8 @@ import { IValues } from "../../types/types";
 import ActionCard from "../layout/ActionCard/ActionCard";
 import Configurator from "../layout/Configurator/Configurator";
 import Roulette from "../layout/Roulette/Roulette";
-import styles from "./Page.module.css";
-import dataset from "./../../store/dataset";
+import styles from "./BenefitPage.module.css";
+import dataset from "../../store/dataset";
 import { observer } from "mobx-react";
 
 type BenefitState = {
@@ -28,7 +28,14 @@ const BenefitPage = observer(
     render(): React.ReactNode {
       return (
         <div className={styles.mainLayout}>
-          <Roulette values={this.state.benefits} />
+          <div>
+            <Roulette values={this.state.benefits} />
+            <Configurator
+              values={this.state.benefits}
+              onSubmit={this.addAction}
+            />
+          </div>
+
           <div>
             {this.state.benefits.map((item) => {
               return (
@@ -39,10 +46,6 @@ const BenefitPage = observer(
                 />
               );
             })}
-            <Configurator
-              values={this.state.benefits}
-              onSubmit={this.addAction}
-            />
           </div>
         </div>
       );

@@ -3,7 +3,7 @@ import { IValues } from "../../types/types";
 import ActionCard from "../layout/ActionCard/ActionCard";
 import Configurator from "../layout/Configurator/Configurator";
 import Roulette from "../layout/Roulette/Roulette";
-import styles from "./Page.module.css";
+import styles from "./PunishmentPage.module.css";
 import dataset from "../../store/dataset";
 import { observer } from "mobx-react";
 
@@ -22,26 +22,31 @@ const PunishmentPage = observer(
     };
 
     removeAction = (id: number) => {
-      dataset.removeBenefit(id);
+      dataset.removePunishment(id);
     };
 
     render(): React.ReactNode {
       return (
         <div className={styles.mainLayout}>
-          <Roulette values={this.state.punishments} />
-          {this.state.punishments.map((item) => {
-            return (
-              <ActionCard
-                key={item.tag + item.id}
-                data={item}
-                onRemove={this.removeAction}
-              />
-            );
-          })}
-          <Configurator
-            values={this.state.punishments}
-            onSubmit={this.addAction}
-          />
+          <div>
+            <Roulette values={this.state.punishments} />
+            <Configurator
+              values={this.state.punishments}
+              onSubmit={this.addAction}
+            />
+          </div>
+
+          <div>
+            {this.state.punishments.map((item) => {
+              return (
+                <ActionCard
+                  key={item.tag + item.id}
+                  data={item}
+                  onRemove={this.removeAction}
+                />
+              );
+            })}
+          </div>
         </div>
       );
     }

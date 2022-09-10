@@ -66,6 +66,7 @@ class Roulette extends React.Component<RouletteProps> {
     const btn = document.getElementById("rollButton") as HTMLButtonElement;
     const offset = 360 + Math.floor(Math.random() * 361);
     this.spinWheel(offset);
+    
     setTimeout(() => {
       this.degree = 0;
       this.spinWheel(0);

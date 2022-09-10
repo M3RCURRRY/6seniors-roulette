@@ -31,7 +31,7 @@ const Configurator = observer(
       tag: "",
       ru_description: "",
       en_description: "",
-      color: "teal",
+      color: "black",
     };
 
     inputHandler(e: ChangeEvent<HTMLInputElement>) {
@@ -75,8 +75,9 @@ const Configurator = observer(
     render(): React.ReactNode {
       return (
         <form onSubmit={(e) => this.submitHandler(e)} className={styles.layout}>
+          <div className={styles.pickedColor} style={{backgroundColor: this.state.color}}/>            
           <label>
-            Tag:
+            Tag / Название:
             <input
               type="text"
               name="tag"
@@ -85,7 +86,7 @@ const Configurator = observer(
             />
           </label>
           <label>
-            Russian description:
+            Описание на русском:
             <input
               type="text"
               name="ru"

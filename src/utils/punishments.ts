@@ -35,12 +35,5 @@ export const punishments: IValues[] = [
     ru_description: "Расклеить 10 листовок на столбах с рекламой 6seniors в своём городе",
     en_description: "Paste 10 flyers with advertising to 6seniors group in your city",
     color: "blue"
-  },
-  {
-    id: 5,
-    tag: "Suck",
-    ru_description: "СОСАТЬ ХУЙ!",
-    en_description: "Sosat' xyi",
-    color: "orange"
   }
 ];
