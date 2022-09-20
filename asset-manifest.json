@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/6seniors-rouletten/static/css/main.ac1ee91e.css",
-    "main.js": "/6seniors-rouletten/static/js/main.5a73bba6.js",
-    "index.html": "/6seniors-rouletten/index.html",
-    "main.ac1ee91e.css.map": "/6seniors-rouletten/static/css/main.ac1ee91e.css.map",
-    "main.5a73bba6.js.map": "/6seniors-rouletten/static/js/main.5a73bba6.js.map"
+    "main.css": "/6seniors-roulette/static/css/main.ac1ee91e.css",
+    "main.js": "/6seniors-roulette/static/js/main.5a73bba6.js",
+    "index.html": "/6seniors-roulette/index.html",
+    "main.ac1ee91e.css.map": "/6seniors-roulette/static/css/main.ac1ee91e.css.map",
+    "main.5a73bba6.js.map": "/6seniors-roulette/static/js/main.5a73bba6.js.map"
   },
   "entrypoints": [
     "static/css/main.ac1ee91e.css",
