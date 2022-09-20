@@ -1,4 +1,3 @@
-import { green } from "@mui/material/colors";
 import { IValues } from "../types/types";
 
 export const benefits: IValues[] = [
@@ -43,5 +42,12 @@ export const benefits: IValues[] = [
     ru_description: "30-минутное общение тет-а-тет с Максимом (ihaveataletotell)",
     en_description: "30 minutes tete-a-tete with Maksimo (ihaveataletotell)",
     color: "orange"
+  },
+  {
+    id: 6,
+    tag: "Stone greeting",
+    ru_description: "Ментор выложит из камушков «{Nickname}, красавчик!»",
+    en_description: "The mentor will lay out of the pebbles «{Nickname}, handsome!»",
+    color: "yellow"
   }
 ];

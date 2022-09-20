@@ -35,5 +35,40 @@ export const punishments: IValues[] = [
     ru_description: "Расклеить 10 листовок на столбах с рекламой 6seniors в своём городе",
     en_description: "Paste 10 flyers with advertising to 6seniors group in your city",
     color: "blue"
+  },
+  {
+    id: 5,
+    tag: "Pikabu",
+    ru_description: "Написать пост на пикабу о своем процессе обучения в 6seniors",
+    en_description: "",
+    color: "green"
+  },
+  {
+    id: 6,
+    tag: "Instagram",
+    ru_description: "Подготовить 2 поста(1 полезный и 1 веселый) в inst 6seniors",
+    en_description: "",
+    color: "white"
+  },
+  {
+    id: 7,
+    tag: "Stickers",
+    ru_description: "Прислать 2 мемных telegram стикера для 6seniors",
+    en_description: "",
+    color: "olive"
+  },
+  {
+    id: 8,
+    tag: "Sportman",
+    ru_description: "х3 фотки / видео спортикус в телегу",
+    en_description: "",
+    color: "gold"
+  },
+  {
+    id: 9,
+    tag: "Good boy",
+    ru_description: "х3 персональные похвалы за 3 дня работнику месяца",
+    en_description: "",
+    color: "magenta"
   }
 ];
